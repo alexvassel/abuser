@@ -21,6 +21,8 @@ def index(bot_token):
 
     chat_id = body['message']['chat']['id']
 
+    print(chat_id)
+
     resp = 'ты {1} {0}'.format(choice(ABUSES['nouns']), choice(ABUSES['adjectives']))
 
     bot.sendMessage(chat_id, resp, parse_mode='Markdown')
