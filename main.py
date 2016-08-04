@@ -3,6 +3,7 @@
 from http import client
 import json
 from random import choice
+from sys import argv
 
 from bottle import run, post, HTTPError, request, response
 
@@ -27,4 +28,4 @@ def index(bot_token):
     response.content_type = 'application/json'
     return json.dumps({})
 
-run(host='localhost', port=8080)
+run(host='0.0.0.0', port=argv[1])
