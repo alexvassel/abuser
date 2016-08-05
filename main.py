@@ -2,18 +2,19 @@
 
 from http import client
 import json
-from random import choice
 from sys import argv
 
 from bottle import run, post, HTTPError, request, response
 
-from conf import bot, ABUSES, TOKEN
+from conf import bot, TOKEN
+from helpers import get_abuse
 
 
 @post('/<bot_token>')
 def index(bot_token):
     if bot_token != TOKEN:
         return HTTPError(client.FORBIDDEN, 'Bad token')
+
     try:
         body = json.loads(request.body.read().decode())
     except ValueError:
@@ -21,11 +22,7 @@ def index(bot_token):
 
     chat_id = body['message']['chat']['id']
 
-    print(chat_id)
-
-    resp = 'ты {1} {0}'.format(choice(ABUSES['nouns']), choice(ABUSES['adjectives']))
-
-    bot.sendMessage(chat_id, resp, parse_mode='Markdown')
+    bot.sendMessage(chat_id, get_abuse(), parse_mode='Markdown')
 
     response.content_type = 'application/json'
     return json.dumps({})
