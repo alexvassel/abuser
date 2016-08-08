@@ -1,2 +1,2 @@
 web: python ./main.py $PORT
-abuse: python abuse.py
+clock: python abuse.py
