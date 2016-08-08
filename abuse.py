@@ -8,7 +8,7 @@ from helpers import get_abuse
 scheduler = BlockingScheduler()
 
 
-@scheduler.scheduled_job('cron', hour='3,8,9,15', minute=25)
+@scheduler.scheduled_job('interval', minutes=3)
 def scheduled_job():
     bot.sendMessage(PUNEACH_CHAT_ID, get_abuse())
 
