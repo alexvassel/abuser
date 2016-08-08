@@ -4,7 +4,7 @@ import telepot
 
 TOKEN = '245698813:AAGAwMUKnAk6Zo5pcqSPOzPmSgdaqrmXJs8'
 
-PUNEACH_CHAT_ID = '78991914' #'87203922'
+PUNEACH_CHAT_ID = '87203922'
 
 bot = telepot.Bot(TOKEN)
 
