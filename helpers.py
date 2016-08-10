@@ -5,4 +5,4 @@ from conf import ABUSES
 
 
 def get_abuse():
-    return 'ты {1} {0}'.format(choice(ABUSES['nouns']), choice(ABUSES['adjectives']))
+    return 'ты {1} {0}.'.format(choice(ABUSES['nouns']), choice(ABUSES['adjectives']))
