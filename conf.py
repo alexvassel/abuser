@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
+import os
 
+import redis as rds
 import telepot
+
+redis = rds.from_url(os.environ.get('REDIS_URL', '127.0.0.1'))
 
 TOKEN = '245698813:AAGAwMUKnAk6Zo5pcqSPOzPmSgdaqrmXJs8'
 
@@ -14,3 +18,6 @@ ABUSES = {'adjectives': ('моченый', 'копченый', 'гальвани
                          'печальный', 'задорный', 'загадочный', 'пригожий', 'задумчивый',
                          'печеный', 'морковный', 'подозрительный', 'таинственный'),
           'nouns': ('овощ', 'пук', 'предмет', 'ботан', 'какуль', 'консервант', 'смеситель')}
+
+ERRORS = {'rss': 'No rss found', 'token': 'Bad token', 'body': 'Invalid request body',
+          'message': 'Invalid message'}
