@@ -1,5 +1,5 @@
 backports.shutil-get-terminal-size==1.0.0
-bottle==0.12.9
+bottle==0.12.19
 decorator==4.0.10
 ipython==4.2.0
 ipython-genutils==0.1.0
